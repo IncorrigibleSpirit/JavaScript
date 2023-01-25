@@ -4,7 +4,7 @@ body {
 
 .container {
     margin: auto;
-    width: 50%;
+    width: 30%;
 }
 
 .data {
@@ -12,9 +12,9 @@ body {
 }    
 
 .image {
-    text-align: center;
+    text-align:center ;
     margin: 24px 0 12px 0;
-    position: relative;
+    position: center;
 }
 
 .avatar {
@@ -26,10 +26,10 @@ body {
     }
 
 input {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0 32px 0;
-display: inline-block;
+width: 80%;
+padding: 7px 5px;
+margin: 8px 0 13px 0;
+display: block;
 border: 1px solid #ccc;
 box-sizing: border-box;
 }
@@ -40,10 +40,10 @@ box-sizing: border-box;
 }
 
 button {
-    background-color: #c7b93e;
+    background-color: #ff0000;
     border: none;
-    color: white;
-    padding: 10px 24px;
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
