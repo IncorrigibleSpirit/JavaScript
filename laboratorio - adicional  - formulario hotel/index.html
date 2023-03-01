@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservaHotel</title>
+</head>
+<body>
+    <form id="form" method="post" action="#" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+       <h1>Reserva de Hotel</h1>
+        <ul>
+            <li>
+                <h2>Tipo de habitación</h2>
+                <label for="typeRoom">Habitación:</label>
+                <select id="typeRoom" name="typeRoom" required>
+                    <option></option>
+                    <option value="standar">Standar </option>
+                    <option value="junior">Junior Suite </option>
+                    <option value="suite">Suite</option>
+                </select>
+            </li>
+            <li>
+                <h2> Servicios adiciones en la habitacion</h2>
+                <label for="spa">Deseo incluir SPA</label>
+                <input type="checkbox" id="spa" name="spa">
+            </li>
+            <li>
+                <h2>Ocupación de la habitación</h2>      
+                <select id="guests" name="guests" required>
+                    <option></option> 
+                    <option value="individual">Individual</option>
+                    <option value="double">Doble</option>
+                    <option value="triple">Triple </option>
+                </select>
+            </li>
+            <li>
+                <h2>Número de noches</h2>
+                <input type="number" id="nights" min="1" max="150" required>
+            </li>
+            <li>
+                <h2>Servicio de parqueadero (indique el número de noches)</h2>
+                <input type="number" id="parkingLot" min="0" max="150">
+            </li>
+            <br>
+            <br>
+            <br>
+                <button type="submit" id="totalPrice" style="background-color: #cda100;">CALCULAR VALOR DE LA RESERVA</button>
+                <h3 id=priceNumber style="color:rgb(26, 26, 26)">TOTAL:</h3>
+            <br>
+    </form>
+<script src="index.js"></script>
+</body>
+</html>
