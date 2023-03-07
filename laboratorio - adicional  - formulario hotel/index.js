@@ -27,6 +27,7 @@ console.log(roomFee())
 function roomSpaFare(){
 var spaSelection = document.getElementById("spa");
 var fare = spaSelection.checked === true ? roomFee() + 20 : roomFee();
+return fare
 }
 console.log(roomSpaFare())
 
@@ -84,5 +85,4 @@ function totalBooking(event){
 event.preventDefault()
 var total = (nightsBooking()) + (parkingFee());
 document.getElementById("priceNumber").innerText= "Valor total de la reserva: " + " " + total + "€";
-return total
 }
