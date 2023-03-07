@@ -32,22 +32,22 @@ var botonDivision = document.getElementById("div");
 
 botonSuma.addEventListener("click", ()=> {
 var resultadoSuma = (operadorA()) == "" || (operadorB()) == "" ? "Ingresa un número en el campo" : suma(Number(operadorA()),Number(operadorB()));
-var result = document.getElementById("resultado").innerText = resultadoSuma;
+document.getElementById("resultado").innerText = resultadoSuma;
 })
 
 botonResta.addEventListener("click", ()=>{
 var resuladoResta = (operadorA()) == "" || (operadorB()) == "" ? "ingresa un número en el campo" : resta(Number(operadorA()),Number(operadorB()));
-var result = document.getElementById("resultado").innerText = resuladoResta;
+document.getElementById("resultado").innerText = resuladoResta;
 })
 
 botonMultiplicacion.addEventListener("click", ()=> {
 var resultadoMultiplicacion = (operadorA()) == "" || (operadorB()) == "" ? "ingresa un número en el campo" : multiplicacion(Number(operadorA()),Number(operadorB()));
-var result = document.getElementById("resultado").innerText = resultadoMultiplicacion;
+document.getElementById("resultado").innerText = resultadoMultiplicacion;
 })
 
 botonDivision.addEventListener("click", ()=> {
 var resultadoDivision = (operadorA()) == "" || (operadorB()) == "" ? "ingresa un número en el campo" : division(Number(operadorA()),Number(operadorB()));
-var result = document.getElementById("resultado").innerText = resultadoDivision;
+document.getElementById("resultado").innerText = resultadoDivision;
 })
 
 /// OPCIONAL PARA REALIZAR VERIFICACION
