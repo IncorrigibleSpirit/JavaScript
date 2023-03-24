@@ -229,9 +229,11 @@ var boton = document.getElementById("myButton");
 boton.addEventListener("click",(event) => {
 event.preventDefault()
 
-for (const iterator of hotelList) {
-    var result = iterator.hotelName == (userInput())? alert("El hotel existe") : alert("El hotel no existe");
+for (const hotel of hotelList) {
+    if ((userInput()) === hotel.hotelName) {
+    return alert("El hotel existe")
+    }
 }
-return result
-})
+return alert("El hotel no existe")
+});
 
