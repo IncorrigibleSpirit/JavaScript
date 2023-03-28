@@ -38,8 +38,12 @@ do {
 // 2º Dado el siguiente array de números, mostrar aquellos que sean mayores a 0
 var js2 = [14, 2, 2.02, 63, 0, -9];
 
-var mayores0 = js2.filter(valores => valores>0)
-console.log(mayores0)
+var filtrarMayores0 = (array) =>{
+    var mayores0 = array.filter(valores => valores>0)
+    return mayores0
+}
+console.log(filtrarMayores0(js2))
+
 
 
 // 3º Separa ahora en un array los números mayores o iguales a 0, y en otro los que sean 
@@ -53,9 +57,14 @@ console.log(menores0)
 
 
 //4 borra del array ORIGINAL, los que sean menores a 0 y muestra el array resutante. Usa splice.
-var sinNegativos = js2.splice(5,1)
-console.log(sinNegativos)
-console.log(js2)
+
+var eliminarMenoresCero = (array) =>{
+    var sinNegativos = array.splice(5,1)
+    return array
+}
+
+console.log (eliminarMenoresCero(js2))
+
 
 // 5º Dado el siguiente array de objetos muestra en sentido inverso (del valor final al valor inicial).
 var js3 = [ { id: 1, name: "Jhon", }, { id: 2, name: "Doe", }, { id: 3, name: "Clara", }, { id:
@@ -76,8 +85,12 @@ var js4 = [ { id: 1, name: "Jhon", age: 25, }, { id: 2, name: "Doe", age: 8, }, 
     "Clara", age: 15, }, { id: 4, name: "Elisa", age: 30, }, { id: 4, name: "Pedro", age:
     18, }, ]
 
-var personasMayores = js4.filter(valores => valores.age >= 18);
-console.log(personasMayores)
+var mayorIgual18 = (array) =>{
+    var personasMayores = array.filter(valores => valores.age >= 18);
+    return personasMayores
+}
+console.log(mayorIgual18(js4))
+
 
 
 //7  Dado el array de objetos del ejercicio anterior, insertar en un array aquellos 
@@ -229,7 +242,7 @@ var boton = document.getElementById("myButton");
 boton.addEventListener("click",(event) => {
 event.preventDefault()
 
-for (const hotel of hotelList) {
+for (var hotel of hotelList) {
     if ((userInput()) === hotel.hotelName) {
     return alert("El hotel existe")
     }
