@@ -61,10 +61,26 @@ units: 0,
 },
 ];
 
+//1. ANCLAJE CONTENEDOR ESTATICO) Y CREACIÓN CONTENEDOR DINÁMICO
 
 var divContainer = document.getElementById("divContainer");
+var divproductList= document.createElement("div");
 
-//1. HTML DINÁMICO - Generación de plantilla según datos del objeto 
+
+//2. DESHABILITAR - HABILITAR BOTON "CALCULAR"
+
+document.getElementById("calcular").disabled = true
+
+var disabledButton = () => {
+    for (const item of productList) {
+      if (item.units > 0) {
+        return document.getElementById("calcular").disabled = false;
+      }
+    }
+  };
+
+
+//3. HTML DINÁMICO - Generación de plantilla según datos del objeto 
 
 var createList = (object) => {
 
@@ -88,21 +104,21 @@ for (let index = 0; index < object.length; index++) {
     productUnits.min = "0"
     productUnits.max = "30"
     productUnits.value = object[index].units;
-    productUnits.addEventListener("change", event => object[index].units = event.target.valueAsNumber);
-    //llamar funcion que habilite o deshabilite
-    //var userInput = (object) => document.getElementById("userInput").addEventListener("change", event => object[index].units = event.target.valueAsNumber);  
-    // ¿Cómo usar el input de los usuarios en las funciones posteriores?
+    productUnits.addEventListener("change", event => {object[index].units = event.target.valueAsNumber;disabledButton()});
 
-divContainer.append(numberingList,productDescription,productPrice,productUnits)
-document.body.appendChild(divContainer)
+
+divproductList.append(numberingList,productDescription,productPrice,productUnits);
+divContainer.appendChild(divproductList);
+
 }}
+
 createList(productList)
 
 
-// 2. FUNCIONES
+// 4. FUNCIONES
 
 
-// 2.2  COSTO DE PRODUCTOS (SUMA ACUMULADA)
+// 4.1  COSTO DE PRODUCTOS (SUMA ACUMULADA)
 var productCost = product => {
     var subtotal = 0;
     for (const items of product) {
@@ -114,23 +130,21 @@ var productCost = product => {
 }
 
 
-
-
-// 2.2 - IVA POR PRODUCTO (unidad) (costo producto unitario * IVA / 100)
+// 4.2 - IVA POR PRODUCTO (unidad) (costo producto unitario * IVA / 100)
 var ivaProduct = product => {
     var totalIva = 0;
-    for (const items of product) {
-        var iva = productCost() * (items.tax) / 100;
-        totalIva += iva; 
+    for (const items of product)  {
+        var priceProduct = items.price * items.units 
+        var productTax = priceProduct * items.tax / 100;
+        totalIva += productTax; 
     }
+    console.log(totalIva)
     return totalIva
 }
 
 
-
-//3 EVENTO
+//5 EVENTOS
 var valorTotal = document.getElementById("calcular");
-valorTotal.addEventListener("click",totalInvoice);
 
 var totalInvoice = (event) => {
 event.preventDefault();
@@ -138,3 +152,5 @@ document.getElementById("valorSubtotal").innerText = productCost(productList);
 document.getElementById("valorIva").innerText = ivaProduct(productList);
 document.getElementById("valorTotal").innerText = productCost(productList) + ivaProduct(productList);
 }
+
+valorTotal.addEventListener("click",totalInvoice);
