@@ -69,15 +69,17 @@ var divproductList= document.createElement("div");
 
 //2. DESHABILITAR - HABILITAR BOTON "CALCULAR"
 
-document.getElementById("calcular").disabled = true
-
 var disabledButton = () => {
     for (const item of productList) {
       if (item.units > 0) {
-        return document.getElementById("calcular").disabled = false;
+        document.getElementById("calcular").disabled;
+        return false
       }
     }
+    return true
   };
+
+document.getElementById("calcular").disabled = disabledButton();
 
 
 //3. HTML DINÁMICO - Generación de plantilla según datos del objeto 
@@ -104,7 +106,8 @@ for (let index = 0; index < object.length; index++) {
     productUnits.min = "0"
     productUnits.max = "30"
     productUnits.value = object[index].units;
-    productUnits.addEventListener("change", event => {object[index].units = event.target.valueAsNumber;disabledButton()});
+    productUnits.addEventListener("change", event => {object[index].units = event.target.valueAsNumber;
+    document.getElementById("calcular").disabled = disabledButton()});
 
 
 divproductList.append(numberingList,productDescription,productPrice,productUnits);
