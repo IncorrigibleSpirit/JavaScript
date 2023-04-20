@@ -9,13 +9,13 @@ function transformLetter(letter, sourceString, destinyString) {
   return destinyString[letterIndex];
 }
 
-function iterateAndTransformText(text) {
+function iterateAndTransformText(text,originalAlphabet,destinyAlphabet) {
   var textLowerCase = text.toLowerCase();
   var result = "";
   for (var letter of textLowerCase) {
   // El orden en que se envíen los argumentos influirá en el funcionamiento del código 
   // No funciona a la vez encriptación y desencriptación.
-    var transformedLetter = transformLetter(letter,plainAlphabet,encryptedAlphabet);
+    var transformedLetter = transformLetter(letter,originalAlphabet,destinyAlphabet);
     result = result + transformedLetter;
   }
   return result;
@@ -24,11 +24,11 @@ function iterateAndTransformText(text) {
 var botonEncriptar = document.getElementById("encriptar");
 botonEncriptar.addEventListener("click", (event) => {
   event.preventDefault();
-  document.getElementById("boxB").value = iterateAndTransformText(userTextBoxA());
+  document.getElementById("boxB").value = iterateAndTransformText(userTextBoxA(),plainAlphabet,encryptedAlphabet);
 });
 
 var botonDesencriptar = document.getElementById("desencriptar");
 botonDesencriptar.addEventListener("click", (event) => {
   event.preventDefault();
-  document.getElementById("boxA").value = iterateAndTransformText(userTextBoxB());
+  document.getElementById("boxA").value = iterateAndTransformText(userTextBoxB(),encryptedAlphabet,plainAlphabet);
 });
