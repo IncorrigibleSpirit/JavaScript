@@ -1,0 +1,27 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#boton{
+    color: gray;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: greenyellow;
+    size: 30px;
+    justify-content: space-between;
+    margin: 30px;
+    size: 30px;
+}
+
+#titulo1 {
+    font-size: 20px;
+}
+
+#titulo2 {
+    font-size: 20px;
+}
+
+#titulo3 {
+    font-size: 20px;
+}
