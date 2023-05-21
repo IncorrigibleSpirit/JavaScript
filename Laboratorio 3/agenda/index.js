@@ -30,11 +30,13 @@ var myTeam = [
     },
 ];
   
+
 // Funcion para obtener números aleatorios
 var getRandom = (a, b) => (Math.random() < 0.5 ? a : b);
 
-// Funcion para encontrar "hueco" en el horario de profesores
+// Funcion para encontrar "hueco" en el horario de los trabajadores
 var findingHoleAvailable = (availabilityPerTeacher) => {
+  console.log("array" +" "+ availabilityPerTeacher)
   for (var i = 0; i < 7; i++) {
     var contador = 0;
    for (let j = 0; j < availabilityPerTeacher.length; j++) {
@@ -43,40 +45,39 @@ var findingHoleAvailable = (availabilityPerTeacher) => {
       }
     }
     if (contador === 4) {
-      return("Se ha encontrado un hueco libre");
+      return("Se ha encontrado un hueco libre" + WORK_HOURS[i]);
     }
   }
   return("No hemos encontrado un hueco libre en ningún trabajador");
-}
+};
+
 
 var issuingRandomSchedule = (object,schedule) => {
 
-// CICLO FOR 1 - Obtenemos nombre de profesores
+  // CICLO FOR 1 - Obtenemos nombre de profesores
+var availabilityPerTeacher = [];
 for (var i = 0; i < object.length; i++) {
-    console.log("Nombre del docente: " + object[i].name);
+    console.log("Nombre del trabajador: " + object[i].name);
 
-// CICLO FOR 2 - ANIDADO - Iteramos malla horaria y generamos disponibilidad aleatoria.
-    var availabilityPerTeacher = [];
-
+// CICLO FOR 2 - ANIDADO -generamos disponibilidad aleatoria.
     for (let j = 0; j < schedule.length; j++) {
-
     var availability = getRandom("si", "no");  // obtenemos disponibilidad aleatoria
-    object[i].availability[i] = availability;
+    object[i].availability[j] = availability;  // Se asignan aleatorios a las 8 horas de cada trabajador
 
 // Guardamos información sobre horarios disponibles marcados con "SI" en array availabilityPerTeacher
-    if (object[i].availability[i] === "si")
-    availabilityPerTeacher.push(object[i].availability[i]);
+    if (object[i].availability[j] === "si"){
+    availabilityPerTeacher.push(j);
+  }
 
 // Emitimos por consola resultado = iteramos malla de horarios : disponibilidad aleatoria
-    console.log(schedule[j] + " " + availability);
+    console.log(schedule[j] + " " + object[i].availability[j]);
 
-// Llamamos función FindingHoleAvailable para saber si existe un hueco en comun en los 4 profesores
-findingHoleAvailable(availabilityPerTeacher)
-
+  }
 }
-console.log(availabilityPerTeacher)
+
+// Llamamos función FindingHoleAvailable para saber si existe un hueco en los 4 trabajadores
+console.log(object);
 console.log(findingHoleAvailable(availabilityPerTeacher))
-}
 }
 
 issuingRandomSchedule(myTeam, WORK_HOURS);
