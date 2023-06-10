@@ -1,8 +1,5 @@
 //EXPRESIONES REGULARES (// ``??<> |||^^\$)
 
-//Preguntas generales:
-//Cuales son los usos comunes y cómo se trabajan estas expresiones regulares (¿verificar info en formularios?)
-
 
 //VALIDAR UN IBAN
 
@@ -89,7 +86,7 @@ var value7 =
 </html>
 `;
 
-var pattern7 = /^<img src="(.{1,}\.(jpg|png|gif))"\/>$/gmi
+var pattern7 = /(https|http):\/\/.{1,}(jpg|png|gif|webp|jpeg|svg)/gim
 var result7 = value7.match(pattern7);
 console.log("imagen extraida #1:" + result7[0])
 console.log("imagen extraida #2:" + result7[1])
@@ -176,8 +173,8 @@ const pattern13 = /^(http(s):\/\/)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-
 
 
 //5 Validador de URL (validando tres tipos de URL)
-// Observación: No reconoce el último valor del Array. Se presenta conflicto con "www", no se podría poner como opcional "?""
-const pattern14 = /^(http(s)?:\/\/)?www\.[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}$/;
+
+const pattern14 = /^(http(s)?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}$/;
 var value14 = ["https://www.lemoncode.net","www.lemoncode.net","lemoncode.net"];
 value14.forEach(ArrayElement => {
 console.log("Regexp matchs with " + ArrayElement  + "? =>",pattern14.test(ArrayElement))
