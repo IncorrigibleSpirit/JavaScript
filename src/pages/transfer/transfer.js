@@ -24,7 +24,7 @@ if (isTransferMode) {
 //3. Establecemos modelo de vista de página
 
 let domesticTransfers = {
-    "select-account": " ",
+    selectAccountId: " ",
     iban:" ",
     name: " ",
     amount:" ",
@@ -43,9 +43,9 @@ let domesticTransfers = {
 
 onUpdateField('select-account', event => {
     const value = event.target.value;
-    domesticTransfers = { ...domesticTransfers,'select-account': value };
+    domesticTransfers = { ...domesticTransfers,'selectAccountId': value };
 
-    formValidation.validateField('select-account', domesticTransfers["select-account"]).then(result => {
+    formValidation.validateField('select-account', domesticTransfers.selectAccountId).then(result => {
     onSetError('select-account', result);
     });
 })

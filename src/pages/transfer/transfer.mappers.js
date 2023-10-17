@@ -10,7 +10,7 @@ export const viewModelToApi = transfers =>
 //VIEW MODEL
 // Ojo: prestar atención a cómo denominar las key especiales y sus values.
 const formInfoViewModel = transfer => ({
-    "select-account": transfer["select-account"], 
+    selectAccountId: transfer.selectAccountId, 
     name: transfer.name,
     iban: transfer.iban,
     amount: transfer.amount,

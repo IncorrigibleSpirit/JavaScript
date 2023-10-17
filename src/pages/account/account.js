@@ -30,7 +30,6 @@ onUpdateField('type', event => {
     const value = event.target.value;
     account = { ...account, type: value };
 
-
     formValidation.validateField('type', account.type).then(result => {
     onSetError('type', result);
     });
@@ -42,13 +41,12 @@ onUpdateField('type', event => {
 onUpdateField('alias', event => {
     const value = event.target.value;
     account = { ...account, alias: value };
-    });
 
     formValidation.validateField('alias', account.alias).then(result => {
     onSetError('alias', result);
     });
 
-
+})
 
 // CREAMOS FUNCION ONSAVE, CONVERTIMOS DATOS VM A API ("LOS DEVOLVEMOS"), Y SI
 // TIENE ID, ACTUALIZA LA INFO, CREA UNA NUEVA CUENTA

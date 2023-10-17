@@ -122,22 +122,22 @@
   ],
   "transfer": [
     {
-      "select-account": "1",
-      "name": "Chuck Norris",
-      "iban": "ES6621000418401234567891",
-      "amount": "350",
-      "concept": "Prestamo",
-      "date": "2023-06-23",
-      "id": 1
+      "selectAccountId": "mKw_X9y",
+      "name": "Juan Quesada",
+      "iban": "ES9121000418450200051332",
+      "amount": "420",
+      "concept": "Intereses ",
+      "date": "2023-9-23",
+      "id": 3
     },
     {
-      "select-account": "mKw_X9y",
-      "name": "Juan Lorade",
-      "iban": "ES1000492352082414205416",
-      "amount": "250",
-      "concept": "Asesoría legal",
-      "date": "2023-7-12",
-      "id": 2
+      "selectAccountId": "2",
+      "name": "Ana Valencia",
+      "iban": "ES9121000418450200051332",
+      "amount": "129",
+      "concept": "reloj",
+      "date": "2023-12-12",
+      "id": 4
     }
   ]
 }
