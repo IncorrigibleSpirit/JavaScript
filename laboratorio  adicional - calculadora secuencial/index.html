@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X}-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calculadora</title>
-</head>
-<body>
-<h1>Calculadora</h1>
-
-<label for="numeroA">Operando A</label>
-<input type="number" id="numeroA">
-
-<button id="add">+</button>
-<button id="sub">-</button>
-<button id="mul">x</button>
-<button id="div">÷</button>
-
-<label for="numeroB">Operando B</label>
-<input type ="number" id="numeroB">
-
-<h3 id="resultado"></h3>
-
-<script src ="index.js"></script>
-</body>
+  </head>
+  <body>
+    <input type="text" id="display" placeholder="Ingresa un número" />
+    <div id="resultado">0</div>
+    <button id="add" class="operacion">+</button>
+    <button id="sub" class="operacion">-</button>
+    <button id="mul" class="operacion">*</button>
+    <button id="div" class="operacion">/</button>
+    <button id="equal">=</button>
+    <script src="index.js"></script>
+  </body>
 </html>
