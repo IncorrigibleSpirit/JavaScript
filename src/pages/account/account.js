@@ -20,7 +20,10 @@ let account = {
   alias: '',
 };
 
-/* QUE SON LOS PARAMS, O QUE PUNTUALMENTE TOMA? los "parámetros de la URL" se refiere a las partes de la URL que vienen después del signo de interrogación (?) y que generalmente se usan para pasar información adicional a la página web. Estos parámetros están formateados como pares clave-valor y se conocen comúnmente como "query parameters" o "parámetros de consulta. Ejemplo: https://example.com/page?name=JohnDoe&id=123.  Los parámetros de la URL son name=JohnDoe y id=123. La funcion getParams() toma estos parámetros y los convierte en un objeto de JavaScript  {name: 'JohnDoe', id: '123'}*/
+/* QUE SON LOS PARAMS, O QUE PUNTUALMENTE TOMA? los "parámetros de la URL" se refiere a las partes de la URL que vienen después del signo de interrogación (?)
+ y que generalmente se usan para pasar información adicional a la página web. Estos parámetros están formateados como pares clave-valor y se conocen comúnmente 
+como "query parameters" o "parámetros de consulta. Ejemplo: https://example.com/page?name=JohnDoe&id=123.  Los parámetros de la URL son name=JohnDoe y id=123. 
+La funcion getParams() toma estos parámetros y los convierte en un objeto de JavaScript  {name: 'JohnDoe', id: '123'}*/
 
 const params = history.getParams();
 const isEditMode = Boolean(params.id);
