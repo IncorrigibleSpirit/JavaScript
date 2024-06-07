@@ -1,12 +1,13 @@
-<h1>Repositorio Bootcamp JavaScript Lemoncode</h1>
+<h1>JavaScript Bootcamp Repository (Lemoncode)</h1>
 <br>
-Este repositorio almacena ejercicios y entregas del bootcamp de JavaScript de Lemoncode.
+This repository stores exercises and assignments from the Lemoncode JavaScript Bootcamp.
 <br>
 <br>
 <ul>
-<li>Ejercicios: Prácticas organizadas por temas.</li>
-<li>Entregas: Proyectos y tareas asignadas.</li>
-<li>Recursos: Documentación y enlaces útiles.</li>
+<li>Exercises: Practices organized by topics.</li>
+<li>Assignments: Projects and assigned tasks.</li>
+<li>Resources: Documentation and useful links.</li>
 </ul>
 
-¡Gracias por tu visita! 🍋🚀
+🍋🚀
+
